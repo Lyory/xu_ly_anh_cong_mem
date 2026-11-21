@@ -1,0 +1,22 @@
+- name: input
+- name: classical
+  options:
+    mode: classical
+- name: classical_homomorphic
+  options:
+    mode: classical
+    shadow_method: homomorphic
+- name: classical_wiener
+  options:
+    mode: classical
+    deblur_method: wiener
+# Enable after training:
+# - name: hybrid
+#   options:
+#     mode: hybrid
+#     shadow_checkpoint: experiments/checkpoints/shadow_deblur/best.pt
+#     dewarp_checkpoint: experiments/checkpoints/dewarp/best.pt
+# - name: uvdoc
+#   backend_config: configs/pretrained.local.yaml
+#   options:
+#     mode: hybrid

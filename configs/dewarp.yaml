@@ -1,0 +1,21 @@
+task: warp
+data_root: data/synthetic/warp
+output_dir: experiments/checkpoints/dewarp
+seed: 42
+device: auto
+epochs: 50
+batch_size: 4
+num_workers: 2
+image_size: 256
+learning_rate: 0.0001
+weight_decay: 0.0001
+amp: true
+model:
+  backbone: resnet18
+  pretrained_encoder: false
+  max_displacement: 0.25
+loss:
+  map_weight: 1.0
+  image_weight: 1.0
+  ssim: 0.2
+  smooth: 0.01

@@ -1,0 +1,38 @@
+{
+  "input_dir": "experiments/smoke/warp/test/input",
+  "target_dir": "experiments/smoke/warp/test/target",
+  "bmap_dir": "experiments/smoke/warp/test/bmap",
+  "text_dir": null,
+  "ocr": false,
+  "lang": "vie+eng",
+  "configs": [
+    {
+      "name": "input"
+    },
+    {
+      "name": "classical",
+      "options": {
+        "mode": "classical"
+      }
+    },
+    {
+      "name": "dl",
+      "options": {
+        "mode": "dl",
+        "device": "cpu",
+        "shadow_checkpoint": null,
+        "dewarp_checkpoint": "experiments/smoke/checkpoints/dewarp/best.pt"
+      }
+    },
+    {
+      "name": "hybrid",
+      "options": {
+        "mode": "hybrid",
+        "device": "cpu",
+        "shadow_checkpoint": null,
+        "dewarp_checkpoint": "experiments/smoke/checkpoints/dewarp/best.pt"
+      }
+    }
+  ],
+  "ld_definition": "normalized backward-map endpoint error in pixels, not DocUNet LD"
+}

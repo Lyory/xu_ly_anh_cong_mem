@@ -1,0 +1,14 @@
+# Paths are resolved from the working directory, except external repo configs
+# which use their upstream repository's path conventions. Requires real weights.
+dewarp_backend:
+  name: uvdoc
+  repo: external/UVDoc
+  checkpoint: external/UVDoc/model/best_model.pkl
+  device: cpu
+# restore_backend:
+#   name: nafnet
+#   repo: external/NAFNet
+#   config: external/NAFNet/options/test/GoPro/NAFNet-width32.yml
+#   python: /absolute/path/to/nafnet-env/bin/python
+# For DocTr use name: doctr, repo, segmentation_checkpoint,
+# geometry_checkpoint, python (CUDA environment); upstream also needs IllTr.

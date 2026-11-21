@@ -1,0 +1,20 @@
+{
+  "input_dir": "experiments/smoke/ocr_input",
+  "target_dir": null,
+  "bmap_dir": null,
+  "text_dir": "experiments/smoke/ocr_input",
+  "ocr": true,
+  "lang": "vie+eng",
+  "configs": [
+    {
+      "name": "input"
+    },
+    {
+      "name": "classical",
+      "options": {
+        "mode": "classical"
+      }
+    }
+  ],
+  "ld_definition": "normalized backward-map endpoint error in pixels, not DocUNet LD"
+}

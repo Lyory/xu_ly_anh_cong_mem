@@ -1,0 +1,21 @@
+task: shadow_deblur
+data_root: data/synthetic/shadow_deblur
+output_dir: experiments/checkpoints/shadow_deblur
+seed: 42
+device: auto
+epochs: 40
+batch_size: 4
+num_workers: 2
+image_size: 256
+learning_rate: 0.0002
+weight_decay: 0.0001
+amp: true
+model:
+  in_ch: 3
+  out_ch: 3
+  base: 32
+loss:
+  l1: 1.0
+  ssim: 0.2
+  perceptual: 0.0  # Set 0.05 to download/use frozen VGG16 ImageNet weights.
+  edge: 0.1

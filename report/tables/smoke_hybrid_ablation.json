@@ -1,0 +1,76 @@
+{
+  "input_dir": "experiments/smoke/shadow/test/input",
+  "target_dir": "experiments/smoke/shadow/test/target",
+  "bmap_dir": null,
+  "text_dir": null,
+  "ocr": false,
+  "lang": "vie+eng",
+  "configs": [
+    {
+      "name": "full",
+      "options": {
+        "mode": "hybrid",
+        "shadow_checkpoint": "experiments/smoke/checkpoints/shadow/best.pt",
+        "dewarp_checkpoint": null,
+        "device": "cpu"
+      }
+    },
+    {
+      "name": "without_dewarp",
+      "options": {
+        "mode": "hybrid",
+        "shadow_checkpoint": "experiments/smoke/checkpoints/shadow/best.pt",
+        "dewarp_checkpoint": null,
+        "device": "cpu",
+        "modules": {
+          "dewarp": false
+        }
+      }
+    },
+    {
+      "name": "without_denoise",
+      "options": {
+        "mode": "hybrid",
+        "shadow_checkpoint": "experiments/smoke/checkpoints/shadow/best.pt",
+        "dewarp_checkpoint": null,
+        "device": "cpu",
+        "modules": {
+          "denoise": false
+        }
+      }
+    },
+    {
+      "name": "without_restore_dl",
+      "options": {
+        "mode": "hybrid",
+        "shadow_checkpoint": "experiments/smoke/checkpoints/shadow/best.pt",
+        "dewarp_checkpoint": null,
+        "device": "cpu",
+        "modules": {
+          "restore_dl": false
+        }
+      }
+    },
+    {
+      "name": "restore_dl_before_denoise",
+      "options": {
+        "mode": "hybrid",
+        "shadow_checkpoint": "experiments/smoke/checkpoints/shadow/best.pt",
+        "dewarp_checkpoint": null,
+        "device": "cpu",
+        "order": [
+          "perspective",
+          "deskew",
+          "dewarp",
+          "shadow",
+          "restore_dl",
+          "deblur",
+          "denoise",
+          "contrast",
+          "binarize"
+        ]
+      }
+    }
+  ],
+  "ld_definition": "normalized backward-map endpoint error in pixels, not DocUNet LD"
+}

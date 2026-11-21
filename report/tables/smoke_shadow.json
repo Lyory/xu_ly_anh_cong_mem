@@ -1,0 +1,38 @@
+{
+  "input_dir": "experiments/smoke/shadow/test/input",
+  "target_dir": "experiments/smoke/shadow/test/target",
+  "bmap_dir": null,
+  "text_dir": null,
+  "ocr": false,
+  "lang": "vie+eng",
+  "configs": [
+    {
+      "name": "input"
+    },
+    {
+      "name": "classical",
+      "options": {
+        "mode": "classical"
+      }
+    },
+    {
+      "name": "dl",
+      "options": {
+        "mode": "dl",
+        "device": "cpu",
+        "shadow_checkpoint": "experiments/smoke/checkpoints/shadow/best.pt",
+        "dewarp_checkpoint": null
+      }
+    },
+    {
+      "name": "hybrid",
+      "options": {
+        "mode": "hybrid",
+        "device": "cpu",
+        "shadow_checkpoint": "experiments/smoke/checkpoints/shadow/best.pt",
+        "dewarp_checkpoint": null
+      }
+    }
+  ],
+  "ld_definition": "normalized backward-map endpoint error in pixels, not DocUNet LD"
+}

@@ -1,0 +1,108 @@
+{
+  "input_dir": "experiments/smoke/shadow/test/input",
+  "target_dir": "experiments/smoke/shadow/test/target",
+  "bmap_dir": null,
+  "text_dir": null,
+  "ocr": false,
+  "lang": "vie+eng",
+  "configs": [
+    {
+      "name": "full",
+      "options": {
+        "mode": "classical",
+        "shadow_checkpoint": null,
+        "dewarp_checkpoint": null,
+        "device": "cpu"
+      }
+    },
+    {
+      "name": "without_dewarp",
+      "options": {
+        "mode": "classical",
+        "shadow_checkpoint": null,
+        "dewarp_checkpoint": null,
+        "device": "cpu",
+        "modules": {
+          "dewarp": false
+        }
+      }
+    },
+    {
+      "name": "without_shadow",
+      "options": {
+        "mode": "classical",
+        "shadow_checkpoint": null,
+        "dewarp_checkpoint": null,
+        "device": "cpu",
+        "modules": {
+          "shadow": false
+        }
+      }
+    },
+    {
+      "name": "without_denoise",
+      "options": {
+        "mode": "classical",
+        "shadow_checkpoint": null,
+        "dewarp_checkpoint": null,
+        "device": "cpu",
+        "modules": {
+          "denoise": false
+        }
+      }
+    },
+    {
+      "name": "without_deblur",
+      "options": {
+        "mode": "classical",
+        "shadow_checkpoint": null,
+        "dewarp_checkpoint": null,
+        "device": "cpu",
+        "modules": {
+          "deblur": false
+        }
+      }
+    },
+    {
+      "name": "deblur_before_denoise",
+      "options": {
+        "mode": "classical",
+        "shadow_checkpoint": null,
+        "dewarp_checkpoint": null,
+        "device": "cpu",
+        "order": [
+          "perspective",
+          "deskew",
+          "dewarp",
+          "shadow",
+          "deblur",
+          "denoise",
+          "restore_dl",
+          "contrast",
+          "binarize"
+        ]
+      }
+    },
+    {
+      "name": "shadow_before_dewarp",
+      "options": {
+        "mode": "classical",
+        "shadow_checkpoint": null,
+        "dewarp_checkpoint": null,
+        "device": "cpu",
+        "order": [
+          "perspective",
+          "deskew",
+          "shadow",
+          "dewarp",
+          "denoise",
+          "deblur",
+          "restore_dl",
+          "contrast",
+          "binarize"
+        ]
+      }
+    }
+  ],
+  "ld_definition": "normalized backward-map endpoint error in pixels, not DocUNet LD"
+}

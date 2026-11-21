@@ -1,0 +1,6 @@
+timestamp,task,run,epoch,train_loss,val_loss,smoke_only
+2026-11-21T12:12:54.686449+00:00,shadow_deblur,experiments/smoke/checkpoints/shadow,1,0.43934366106987,0.3885001838207245,True
+2026-11-21T12:12:55.043818+00:00,warp,experiments/smoke/checkpoints/dewarp,1,0.1359264850616455,0.1406792551279068,True
+2026-11-21T12:15:51.521267+00:00,shadow_deblur,experiments/smoke/checkpoints/shadow,1,0.20907096564769745,0.2648959755897522,True
+2026-11-21T12:15:54.988656+00:00,warp,experiments/smoke/checkpoints/dewarp,1,0.1359264850616455,0.1406080424785614,True
+2026-11-21T12:16:37.092366+00:00,shadow_deblur,experiments/notebook_smoke/checkpoints/shadow_deblur,1,0.28210464864969254,0.26455867290496826,True
